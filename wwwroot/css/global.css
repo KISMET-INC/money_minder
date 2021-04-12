@@ -1,0 +1,41 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 2px dotted red; */
+    font-family: var(--monst);
+    -ms-overflow-style: none;  
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.wrapper {
+    width: 70%;
+    margin:auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    width: 100%;
+}
+
+body .wallet {
+    position: absolute;
+    top: -80px;
+    left: -100px;
+    opacity: 0.09;
+}
+
+.container {
+    height: 100vh;
+    background-image: linear-gradient(rgba(118, 200, 147, 0.3), var(--offwhite) 50%);
+}
+

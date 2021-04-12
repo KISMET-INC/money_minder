@@ -1,0 +1,20 @@
+
+#Bill_Label p,
+#Payment_Label p {
+    color: var(--blue1)
+}
+
+#Bill_Label img,
+#Payment_Label img {
+    height: 50px;
+    opacity: 0.2;
+}
+
+#Payment_Label img {
+    margin-right: 8px;
+}
+
+#Bill_Label,
+#Payment_Label {
+    align-items: center;
+}

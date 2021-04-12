@@ -1,0 +1,11 @@
+@import 'allbills.css';
+@import 'billLabel.css';
+@import 'paymentCard.css';
+
+#Dashboard .labels{
+    border-bottom: 2px var(--green1) solid;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    
+}
+

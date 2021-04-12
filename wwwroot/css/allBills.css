@@ -1,0 +1,39 @@
+
+#Bill_Row td {
+    padding: 5px 10px;
+}
+
+#Bill_Row td:nth-child(2){
+    font-weight: 700;
+}
+#Bill_Row {
+    width: 350px
+}
+
+
+#All_Bills .add_bill {
+    font-size: 25px;
+    color: var(--green2);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+#All_Bills p {
+    color:var(--blue1);
+    text-align: center;
+    font-weight: 500;
+}
+#Bill_Row table {
+    margin-top: 10px;
+}
+#Bill_Row select,
+#Bill_Row td  {
+    font-weight: 500;
+    color: var(--green3);
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+#Bill_Row select {
+    padding-right: 10px;
+}

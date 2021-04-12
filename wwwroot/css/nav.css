@@ -1,0 +1,68 @@
+
+
+nav #Logo{
+    font-family: var(--aleo);
+    color: var(--green1);
+    font-size: 35px;
+    text-align: center;
+}
+nav span {
+    color: var(--green2);
+    font-size: 40px;
+    font-family: var(--aleo);
+}
+
+nav.bar {
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid var(--green2);
+    box-shadow: 10px 20px 28px rgba(116, 200, 146,0.4);
+    
+}
+
+nav .flex {
+    justify-content: space-between;
+}
+
+nav .options,
+nav .date {
+    align-self: center;
+    font-family: var(--monst);
+    font-size: 12px;
+}
+
+
+nav .options .balance {
+    color: var(--blue1);
+    font-weight: 700;
+}
+nav .options p:last-child {
+    font-size: 16px;
+}
+
+nav .options .waiting,
+nav .options .difference {
+    color: var(--grey);
+}
+
+nav .options {
+    width: 400px;
+}
+
+nav .left {
+    width: 325px;
+}
+
+
+
+nav .date {
+    font-family: var(--monst);
+    color: var(--green2);
+    font-size: 12px;
+}
+
+nav i {
+    color: var(--blue1);
+    font-size: 30px;
+}

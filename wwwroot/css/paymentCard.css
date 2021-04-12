@@ -1,0 +1,15 @@
+#Payment_Card {
+    background-color: var(--offwhite);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.4);
+    width: 400px;
+}
+
+#Payment_Card .top {
+    font-weight: bold;
+    color: var(--green2);
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}

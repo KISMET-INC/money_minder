@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MoneyMinder</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    @* Fonts *@
+
+    <link href="https://fonts.googleapis.com/css2?family=Aleo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700" rel="stylesheet">
+
+    @* Stylesheets *@
+    <link rel="stylesheet" href="~/css/Layout.css"/>
+
+</head>
+<body>
+    @* <img class='wallet' src ="~/img/wallet.png"  alt ='wallet'> *@
+    <partial name= "NavPartial"/>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <partial name="FooterPartial"/>
+</body>
+</html>
