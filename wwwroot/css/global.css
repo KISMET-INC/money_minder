@@ -31,11 +31,17 @@ body .wallet {
     position: absolute;
     top: -80px;
     left: -100px;
-    opacity: 0.09;
+    opacity: 0.05;
 }
 
 .container {
-    height: 100vh;
     background-image: linear-gradient(rgba(118, 200, 147, 0.3), var(--offwhite) 50%);
 }
 
+.add {
+    font-size: 25px;
+    color: var(--green2);
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+}

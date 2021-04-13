@@ -2,14 +2,28 @@
     background-color: var(--offwhite);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.4);
     width: 400px;
+    margin-bottom: 12px;
 }
 
 #Payment_Card .top {
     font-weight: bold;
     color: var(--green2);
     font-size: 20px;
-    margin-bottom: 10px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
 
+#Payment_Card.flex {
+    flex-direction: column;
+    justify-content: center;
+}
+
+#Payment_Card .add_bill {
+    color: var(--grey);
+    margin-top: 20px;
+    text-align: center;
 }

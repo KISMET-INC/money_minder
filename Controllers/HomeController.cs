@@ -21,8 +21,8 @@ namespace money_minder.Controllers     //be sure to use your own project's names
         }
 
 
-        [HttpGet("bill")]     
-        public IActionResult ShowBill()
+        [HttpGet("add")]     
+        public IActionResult AddBill()
         {
             return View();
         }

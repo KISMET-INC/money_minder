@@ -1,4 +1,4 @@
-@import 'allbills.css';
+@import 'billRow.css';
 @import 'billLabel.css';
 @import 'paymentCard.css';
 
@@ -6,6 +6,24 @@
     border-bottom: 2px var(--green1) solid;
     padding-bottom: 10px;
     padding-top: 30px;
+    margin-bottom: 50px;
+
     
 }
 
+#Dashboard #Bill_Label,
+#Dashboard #Payment_Label {
+    justify-content: center;
+}
+
+#Dashboard #Bill_Label {
+    width: 320px;
+}
+
+#Dashboard #Payment_Label {
+    width: 430px;
+}
+
+#Dashboard .payment_cards .add{
+    margin-bottom: 20px
+}
