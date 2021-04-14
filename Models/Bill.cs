@@ -22,13 +22,15 @@ namespace money_minder.Models
         [Required]
         public DateTime Due {get;set;}
 
+        public string Status {get;set;}
+
         //Navigation Property
         public List<BillHistory> Histories {get;set;}
 
 
-        // Navigation Property
-        public int CheckId {get;set;}
-        public Check PlannedFrom {get;set;}
+        // // Navigation Property
+        // public int CheckId {get;set;}
+        // public Check PlannedFrom {get;set;}
 
 
         // TimeStamp

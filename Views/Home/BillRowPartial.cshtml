@@ -1,16 +1,29 @@
+@{ 
+    string date = @Model.Due?.ToString("M/dd/yyyy");
+    decimal total = Decimal.Round(@Model.Total,2);
+    string [] options = new string[] {"Action Needed","Remove"};
+    string status = "Action Needed";
+}
+
 <tr id = 'Bill_Row'>
-    <td>2/21</td>
-    <td>electric</td>
-    <td>$342</td>
+    <td>@date</td>
+    <td>@Model.Type</td>
+    <td>@total</td>
     <td class = 'flex'>
         <select>
-            <option>NEEDS ACTION</option>
-            <option>remove</option>
-            <option>edit</option>
-            <option>pay from 1</option>
-            <option>pay from 2</option>
-            <option>WAITING</option>
-            <option>PAID</option>
+        @{
+            foreach(var action in @options){
+                if(@action == @status)
+                {
+                    <option selected>@action</option>
+                }
+                else 
+                {
+                    <option>@action</option>
+
+                }
+            }
+        }
         </select>
         
     </td>

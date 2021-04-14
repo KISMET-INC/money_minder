@@ -1,4 +1,7 @@
 
+@using money_minder.Models
+@model List<Bill>
+
 <div id = 'Dashboard' class='wrapper'>
     <section class = 'labels flex'>
         <partial name='BillLabelPartial' />
@@ -8,7 +11,7 @@
     <section class = 'work_panel flex'>
         <partial name='AllBillsPartial'/>
         <div class = 'payment_cards'>
-            <p class ="add">+ Add a Payment</p>
+            <a href='/create_payment'><p class ="add">+ Add a Payment</p></a>
             <partial name='PaymentCardPartial'/>
             <partial name='PaymentCardPartial'/>
             <partial name='PaymentCardPartial'/>

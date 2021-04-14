@@ -1,14 +1,15 @@
+
+
 <div id = 'All_Bills'>
-<p class = 'add'>+ Add a bill</p>
+<a href="/create_bill"><p class = 'add'>+ Add a bill</p></a>
 <p class='all_bills'>ALL BILLS</p>
 
 <table>
     <tbody>
 
     @{
-        for(var i = 0; i< 5; i++)
-        {
-            <partial name= "BillRowPartial" />
+        foreach( var bill in Model){
+            <partial name= "BillRowPartial" model="bill"/>
         }
     }
     </tbody>

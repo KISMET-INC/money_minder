@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace money_minder.Models
 {
-    public class Check
+    public class Paycheck
     {
         [Key]
 
