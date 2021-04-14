@@ -25,9 +25,14 @@ namespace money_minder.Controllers     //be sure to use your own project's names
         [HttpGet("")]     
         public IActionResult Index()
         {
-            List<Bill> AllBills = _context.Bills.ToList();
 
-            return View("Index", AllBills);
+            @ViewBag.BillsList = _context.Bills.ToList();
+            @ViewBag.ChecksList = _context.Paychecks.ToList();
+            @ViewBag.BillsTotal = Decimal.Round(_context.Bills.Sum(x => x.Total),2);
+            @ViewBag.PaymentsTotal = Decimal.Round(_context.Paychecks.Sum(x => x.Total),2);
+            
+
+            return View("Index");
         }
 
         //===================================//

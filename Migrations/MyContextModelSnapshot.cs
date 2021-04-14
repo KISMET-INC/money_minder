@@ -35,8 +35,9 @@ namespace money_minder.Migrations
 
             modelBuilder.Entity("money_minder.Models.Bill", b =>
                 {
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<int>("BillId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("Company")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -47,11 +48,14 @@ namespace money_minder.Migrations
                     b.Property<DateTime>("Due")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime?>("PaycheckPayDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int?>("PaycheckId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -63,9 +67,9 @@ namespace money_minder.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("Total");
+                    b.HasKey("BillId");
 
-                    b.HasIndex("PaycheckPayDate");
+                    b.HasIndex("PaycheckId");
 
                     b.ToTable("Bills");
                 });
@@ -84,23 +88,21 @@ namespace money_minder.Migrations
                     b.Property<DateTime>("PaidDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<decimal>("SourceTotal")
-                        .HasColumnType("decimal(65,30)");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Total");
 
-                    b.HasIndex("SourceTotal");
+                    b.HasIndex("BillId");
 
                     b.ToTable("BillHistories");
                 });
 
             modelBuilder.Entity("money_minder.Models.Paycheck", b =>
                 {
-                    b.Property<DateTime>("PayDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<int>("PaycheckId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -108,13 +110,16 @@ namespace money_minder.Migrations
                     b.Property<string>("From")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<DateTime>("PayDate")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(65,30)");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.HasKey("PayDate");
+                    b.HasKey("PaycheckId");
 
                     b.ToTable("Paychecks");
                 });
@@ -123,14 +128,14 @@ namespace money_minder.Migrations
                 {
                     b.HasOne("money_minder.Models.Paycheck", null)
                         .WithMany("PlannedBills")
-                        .HasForeignKey("PaycheckPayDate");
+                        .HasForeignKey("PaycheckId");
                 });
 
             modelBuilder.Entity("money_minder.Models.BillHistory", b =>
                 {
                     b.HasOne("money_minder.Models.Bill", "Source")
                         .WithMany("Histories")
-                        .HasForeignKey("SourceTotal")
+                        .HasForeignKey("BillId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

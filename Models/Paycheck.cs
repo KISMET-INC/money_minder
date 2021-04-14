@@ -7,7 +7,8 @@ namespace money_minder.Models
     public class Paycheck
     {
         [Key]
-
+        public int PaycheckId {get; set;}
+        
         [Required]
         public DateTime PayDate { get; set; }
 

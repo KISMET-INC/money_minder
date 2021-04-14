@@ -1,15 +1,15 @@
 
-#Add_Bill .inputs.flex {
+.create .inputs.flex {
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-#Add_Bill .inputs {
+.create .inputs {
     color: var(--green2);
     font-weight: bold;
 }
 
-#Add_Bill input {
+.create input {
     border: 1px solid var(--green2);
     border-radius: 5px;
 }

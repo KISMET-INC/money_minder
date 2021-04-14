@@ -1,27 +1,19 @@
 
-<div id = 'Add_Bill' class = 'wrapper'>
+<div id = 'Add_Paycheck' class = ' create wrapper'>
     <section class = 'your_bill left'>
-        <h2>Add a Bill</h2>  
-        <form action='process_create_bill' method='post'>
+        <h2>Add a Paycheck</h2>  
+        <form action='/process_create_paycheck' method='post'>
             <div class='inputs flex'>
-                <label>DUE DATE</label>
-                <input type='date' name = 'Due'>
+                <label>PAYDATE</label>
+                <input type='date' name = 'PayDate'>
             </div>
             <div class='inputs flex'>
-                <label>TYPE</label>
-                <input type='text' name = 'Type'>
-            </div>
-            <div class='inputs flex'>
-                <label>COMPANY</label>
-                <input type='text' name = 'Company'>
+                <label>FROM</label>
+                <input type='text' name = 'From'>
             </div>
             <div class='inputs flex'>
                 <label>TOTAL</label>
                 <input type='number' name = 'Total'>
-            </div>
-            <div class='inputs flex'>
-                <label>SITE URL</label>
-                <input type='string' name = 'Url'>
             </div>
 
             <button type ='submit'>Add this!</button>

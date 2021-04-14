@@ -8,7 +8,7 @@
     <tbody>
 
     @{
-        foreach( var bill in Model){
+        foreach( var bill in @ViewBag.BillsList){
             <partial name= "BillRowPartial" model="bill"/>
         }
     }

@@ -8,7 +8,8 @@ namespace money_minder.Models
     public class Bill
     {
         [Key]
-
+        public int BillId {get;set;}
+        
         [Required]
         public Decimal Total {get;set;}
 

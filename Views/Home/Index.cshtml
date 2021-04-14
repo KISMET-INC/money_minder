@@ -1,6 +1,6 @@
 
 @using money_minder.Models
-@model List<Bill>
+
 
 <div id = 'Dashboard' class='wrapper'>
     <section class = 'labels flex'>
@@ -11,10 +11,12 @@
     <section class = 'work_panel flex'>
         <partial name='AllBillsPartial'/>
         <div class = 'payment_cards'>
-            <a href='/create_payment'><p class ="add">+ Add a Payment</p></a>
-            <partial name='PaymentCardPartial'/>
-            <partial name='PaymentCardPartial'/>
-            <partial name='PaymentCardPartial'/>
+            <a href='/create_paycheck'><p class ="add">+ Add a Payment</p></a>
+            @{
+                foreach(var paycheck in @ViewBag.ChecksList){
+                    <partial name='PaymentCardPartial' model='paycheck'></partial>
+                }
+            }
 
         </div>
     </section>

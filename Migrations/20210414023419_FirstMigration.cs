@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace money_minder.Migrations
@@ -24,6 +25,8 @@ namespace money_minder.Migrations
                 name: "Paychecks",
                 columns: table => new
                 {
+                    PaycheckId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     PayDate = table.Column<DateTime>(nullable: false),
                     From = table.Column<string>(nullable: true),
                     Total = table.Column<decimal>(nullable: false),
@@ -32,13 +35,15 @@ namespace money_minder.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Paychecks", x => x.PayDate);
+                    table.PrimaryKey("PK_Paychecks", x => x.PaycheckId);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Bills",
                 columns: table => new
                 {
+                    BillId = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Total = table.Column<decimal>(nullable: false),
                     Type = table.Column<string>(nullable: false),
                     Company = table.Column<string>(nullable: true),
@@ -47,16 +52,16 @@ namespace money_minder.Migrations
                     Status = table.Column<string>(nullable: true),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false),
-                    PaycheckPayDate = table.Column<DateTime>(nullable: true)
+                    PaycheckId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Bills", x => x.Total);
+                    table.PrimaryKey("PK_Bills", x => x.BillId);
                     table.ForeignKey(
-                        name: "FK_Bills_Paychecks_PaycheckPayDate",
-                        column: x => x.PaycheckPayDate,
+                        name: "FK_Bills_Paychecks_PaycheckId",
+                        column: x => x.PaycheckId,
                         principalTable: "Paychecks",
-                        principalColumn: "PayDate",
+                        principalColumn: "PaycheckId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -67,7 +72,6 @@ namespace money_minder.Migrations
                     Total = table.Column<decimal>(nullable: false),
                     PaidDate = table.Column<DateTime>(nullable: false),
                     BillId = table.Column<int>(nullable: false),
-                    SourceTotal = table.Column<decimal>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     UpdatedAt = table.Column<DateTime>(nullable: false)
                 },
@@ -75,22 +79,22 @@ namespace money_minder.Migrations
                 {
                     table.PrimaryKey("PK_BillHistories", x => x.Total);
                     table.ForeignKey(
-                        name: "FK_BillHistories_Bills_SourceTotal",
-                        column: x => x.SourceTotal,
+                        name: "FK_BillHistories_Bills_BillId",
+                        column: x => x.BillId,
                         principalTable: "Bills",
-                        principalColumn: "Total",
+                        principalColumn: "BillId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BillHistories_SourceTotal",
+                name: "IX_BillHistories_BillId",
                 table: "BillHistories",
-                column: "SourceTotal");
+                column: "BillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bills_PaycheckPayDate",
+                name: "IX_Bills_PaycheckId",
                 table: "Bills",
-                column: "PaycheckPayDate");
+                column: "PaycheckId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

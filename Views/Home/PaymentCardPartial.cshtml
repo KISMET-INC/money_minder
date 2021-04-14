@@ -1,8 +1,13 @@
+@{ 
+    string date = @Model.PayDate?.ToString("M/dd");
+    decimal total = Decimal.Round(@Model.Total,2);
+}
+
 <div id= 'Payment_Card' class = 'flex'>
     <section class = 'top flex'>
         <p>Check 1: </p>
-        <p>12/14 </p>
-        <p>$2132 </p>
+        <p>@date </p>
+        <p>@total </p>
         <p>$122 </p>
     </section>
         <table class = 'bill_rows'>
